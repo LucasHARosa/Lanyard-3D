@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# lanyard-3d
 
-## Getting Started
+<div align="center">
+  <img src="./public/assets/cracha.png" alt="Preview do projeto" width="400"/>
+</div>
 
-First, run the development server:
+Experimento visual em 3D que simula um crachá pendurado por uma fita, com comportamento físico em tempo real.
+
+Você pode clicar e puxar o crachá para baixo (ou para outras direções) e soltar para ver a reação natural da estrutura, como balanço, inércia e amortecimento.
+
+## O que o projeto demonstra
+
+- Simulação de física com juntas entre segmentos (efeito de fita/cordão).
+- Interação por arrasto (drag) no objeto 3D.
+- Renderização em tempo real com iluminação de estúdio.
+- Uso de modelo GLB e textura aplicada na fita.
+
+## Stack e bibliotecas envolvidas
+
+### Núcleo da experiência
+
+- `next`, `react`, `react-dom`: base da aplicação web.
+- `three`: engine 3D usada por baixo dos panos.
+- `@react-three/fiber`: integração declarativa do Three.js com React.
+- `@react-three/drei`: utilitários para cena 3D (GLTF, texturas, ambiente e luzes).
+- `@react-three/rapier`: física em tempo real (corpos rígidos e juntas).
+- `meshline`: renderização da fita/linha com geometria própria.
+
+### Bibliotecas instaladas, mas não utilizadas no código atual
+
+- `framer-motion`
+- `framer-motion-3d`
+- `@studio-freight/lenis`
+- `leva`
+
+Se quiser, você pode remover essas dependências para reduzir o bundle e simplificar o projeto.
+
+## Como rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra `http://localhost:3000` no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura principal
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `app/page.tsx`: ponto de entrada da página.
+- `components/band/App.js`: cena 3D, física, interação e renderização do crachá.
+- `components/band/index.css`: container responsivo do canvas.
+- `public/assets/`: modelo `.glb` e textura da fita.
 
-## Learn More
+## Sugestão de descrição curta (GitHub)
 
-To learn more about Next.js, take a look at the following resources:
+Teste de componentes 3D com simulação física de crachá interativo: arraste e solte para ver o movimento realista da fita com React Three Fiber + Rapier.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tags sugeridas (GitHub Topics)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `nextjs`
+- `react`
+- `threejs`
+- `react-three-fiber`
+- `react-three-drei`
+- `rapier`
+- `3d`
+- `physics`
+- `webgl`
+- `interactive`
+- `gltf`
 
-## Deploy on Vercel
+## Possível evolução
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Adicionar controles de debug para parâmetros físicos (massa, damping, gravidade).
+- Incluir animações de câmera e UI de apresentação.
+- Preparar versão mobile com ajuste fino de sensibilidade no drag.

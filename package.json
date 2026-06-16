@@ -1,6 +1,20 @@
 {
   "name": "3d-earth",
   "version": "0.1.0",
+  "description": "Teste de cracha 3D interativo com fisica em tempo real usando React Three Fiber e Rapier.",
+  "keywords": [
+    "nextjs",
+    "react",
+    "threejs",
+    "react-three-fiber",
+    "react-three-drei",
+    "rapier",
+    "3d",
+    "physics",
+    "webgl",
+    "gltf",
+    "interactive"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
